@@ -50,7 +50,7 @@ const TOOLS = [
             tagColor: "bg-amber-500",
             image: diabatesimg, // ← ganti dengan gambar lain
             url: "/tableudiabates",
-            isInternal: false,
+            isInternal: true,
           },
           {
             id: 3,
@@ -60,7 +60,7 @@ const TOOLS = [
             tagColor: "bg-violet-500",
             image: rankmiliter,
             url: "/militerranks",
-            isInternal: false,
+            isInternal: true,
           },
           {
             id: 4,
@@ -70,7 +70,7 @@ const TOOLS = [
             tagColor: "bg-indigo-500",
             image: gdp,
             url: "/gdp",
-            isInternal: false,
+            isInternal: true,
           },
           {
             id: 5,
@@ -80,7 +80,7 @@ const TOOLS = [
             tagColor: "bg-red-500",
             image: lifeex,
             url: "/lifeexpectancy",
-            isInternal: false,
+            isInternal: true,
           },
         ],
       },
@@ -97,7 +97,7 @@ const TOOLS = [
             tagColor: "bg-orange-500",
             image: sales_dashboard1,
             url: "/sales_dashboard1",
-            isInternal: false,
+            isInternal: true,
           },
           {
             id: 2,
@@ -107,7 +107,7 @@ const TOOLS = [
             tagColor: "bg-blue-500",
             image: hR,
             url: "/hRDashboard",
-            isInternal: false,
+            isInternal: true,
           },
           // {
           //   id: 3,
@@ -225,7 +225,7 @@ const TOOLS = [
             tagColor: "bg-yellow-600",
             image: imgMBG,
             url: "#",
-            isInternal: false,
+            isInternal: true,
           },
           {
             id: 2,
@@ -235,7 +235,7 @@ const TOOLS = [
             tagColor: "bg-blue-500",
             image: imgMBG,
             url: "#",
-            isInternal: false,
+            isInternal: true,
           },
           // {
           //   id: 3,
@@ -296,7 +296,7 @@ const TOOLS = [
             tagColor: "bg-green-600",
             image: excell1,
             url: "/excell1",
-            isInternal: false,
+            isInternal: true,
           },
           // {
           //   id: 2,

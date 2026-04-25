@@ -39,8 +39,9 @@ const stats = [
 const topCountries = [
   { name: "China", cases: 148, pct: 100, flag: "🇨🇳" },
   { name: "India", cases: 89.8, pct: 60.7, flag: "🇮🇳" },
-  { name: "Pakistan", cases: 32.4, pct: 21.9, flag: "🇵🇰" },
+
   { name: "Amerika Serikat", cases: 29.3, pct: 19.8, flag: "🇺🇸" },
+  { name: "Pakistan", cases: 34, pct: 21.9, flag: "🇵🇰" },
   { name: "Indonesia", cases: 20.4, pct: 13.8, flag: "🇮🇩" },
 ];
 
