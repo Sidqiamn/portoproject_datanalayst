@@ -298,21 +298,21 @@ const Nav = () => {
               className="nav-link"
               style={{ color: scrolled ? "#475569" : "rgba(255,255,255,0.85)" }}
             >
-              Tentang Kami
+              Tentang Saya
             </a>
 
             {/* FAQ */}
-            <a
+            {/* <a
               href="/faq"
               className="nav-link"
               style={{ color: scrolled ? "#475569" : "rgba(255,255,255,0.85)" }}
             >
               FAQ
-            </a>
+            </a> */}
 
             {/* CTA Button */}
             <a
-              href="/portfolio"
+              href="https://portofolio-data-analyst-crnf.vercel.app/"
               style={{
                 display: "inline-flex",
                 alignItems: "center",

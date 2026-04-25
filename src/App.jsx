@@ -8,6 +8,8 @@ import HRDashboard from "./pages/HRDashboard";
 import MiliterRanks from "./pages/MiliterRanks";
 import Gdp from "./pages/Gdp";
 import Lifeexpetancy from "./pages/lifeexpetancy";
+import PowerBI1 from "./pages/PowerBI1";
+import Excell1 from "./pages/Excell1";
 
 const App = () => {
   return (
@@ -24,6 +26,8 @@ const App = () => {
         <Route path="/militerranks" element={<MiliterRanks />} />
         <Route path="/gdp" element={<Gdp />} />
         <Route path="/lifeexpectancy" element={<Lifeexpetancy />} />
+        <Route path="/powerBI1" element={<PowerBI1 />} />
+        <Route path="/excell1" element={<Excell1 />} />
       </Routes>
     </>
   );
