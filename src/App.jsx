@@ -10,6 +10,8 @@ import Gdp from "./pages/Gdp";
 import Lifeexpetancy from "./pages/lifeexpetancy";
 import PowerBI1 from "./pages/PowerBI1";
 import Excell1 from "./pages/Excell1";
+import Scrap_bappenas from "./pages/Scrap_bappenas";
+import Excell2 from "./pages/Excell2";
 
 const App = () => {
   return (
@@ -28,6 +30,8 @@ const App = () => {
         <Route path="/lifeexpectancy" element={<Lifeexpetancy />} />
         <Route path="/powerBI1" element={<PowerBI1 />} />
         <Route path="/excell1" element={<Excell1 />} />
+        <Route path="/scrapbappenas" element={<Scrap_bappenas />} />
+        <Route path="/excel2" element={<Excell2 />} />
       </Routes>
     </>
   );
