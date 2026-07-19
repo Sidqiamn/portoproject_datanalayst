@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 // ─── ASSETS ──────────────────────────────────────────────────────────────────
 import imgMBG from "../assets/mbgkeracunan.png";
 import diabatesimg from "../assets/diabetes.png";
-import sales_dashboard1 from "../assets/sales_dashboard1.png";
+import salesdashboard1 from "../assets/salesdashboard1.png";
 import hR from "../assets/hR.png";
 import rankmiliter from "../assets/rankmiliter.png";
 import gdp from "../assets/gdp.png";
@@ -13,7 +13,7 @@ import powerBI1 from "../assets/powerBI1.png";
 import excell1 from "../assets/excell1.png";
 import excel2 from "../assets/exell2.png";
 import pytthonimage1 from "../assets/orderheatmap.png";
-import dashboard_hijab_Powerbi2 from "../assets/dashboard_hijab_Powerbi2.png";
+import dashboardhijabPowerbi2 from "../assets/dashboardhijabPowerbi2.png";
 
 // ─── DATA ─────────────────────────────────────────────────────────────────────
 const TOOLS = [
@@ -97,8 +97,8 @@ const TOOLS = [
             date: "Jan 2026",
             tag: "Dashboard",
             tagColor: "bg-orange-500",
-            image: sales_dashboard1,
-            url: "/sales_dashboard1",
+            image: salesdashboard1,
+            url: "/salesdashboard1",
             isInternal: true,
           },
           {
@@ -148,7 +148,7 @@ const TOOLS = [
             date: "Feb 2026",
             tag: "E-Commerce",
             tagColor: "bg-sky-500",
-            image: dashboard_hijab_Powerbi2,
+            image: dashboardhijabPowerbi2,
             url: "/Powerbi2Hijab",
             isInternal: false,
           },

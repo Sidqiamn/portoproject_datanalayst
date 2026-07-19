@@ -437,7 +437,7 @@ function TechBadge({ name, icon, color }) {
 }
 
 // ─── MAIN COMPONENT ───────────────────────────────────────────────────────────
-const Scrap_bappenas = () => {
+const Scrapbappenas = () => {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("overview");
 
@@ -1793,4 +1793,4 @@ recommendation = resp.json()["choices"][0]["message"]["content"]`,
   );
 };
 
-export default Scrap_bappenas;
+export default Scrapbappenas;

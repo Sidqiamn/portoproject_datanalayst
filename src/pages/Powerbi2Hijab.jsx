@@ -24,7 +24,7 @@ import {
 } from "lucide-react";
 
 // Ganti path ini dengan screenshot dashboard Power BI asli Anda
-import dashboardZen from "../../src/assets/dashboard_hijab_Powerbi2.png";
+import dashboardZen from "../../src/assets/dashboardhijabPowerbi2.png";
 
 /* ─────────────────────────────────────────────────────────────
    DATA — direkonstruksi dari screenshot dashboard "Zen Dress Daily"

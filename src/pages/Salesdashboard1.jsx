@@ -379,7 +379,7 @@ const DonutChart = () => {
 };
 
 /* ─────────────────────── MAIN COMPONENT ─────────────────────── */
-const Sales_dashboard1 = () => {
+const Salesdashboard1 = () => {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("sales");
 
@@ -1058,4 +1058,4 @@ const Sales_dashboard1 = () => {
   );
 };
 
-export default Sales_dashboard1;
+export default Salesdashboard1;
