@@ -124,12 +124,15 @@ const TableauViz = () => {
     const TABLEAU_URL =
       "https://public.tableau.com/views/lifeexpetancy_17756170408770/Sheet1";
 
+    // Simpan referensi container sekali saja
+    const container = containerRef.current;
+    if (!container) return;
+
     // Cek apakah script sudah ada
     const existingScript = document.getElementById("tableau-api-script");
 
     const initViz = () => {
-      if (!containerRef.current) return;
-      containerRef.current.innerHTML = "";
+      container.innerHTML = "";
 
       const vizEl = document.createElement("tableau-viz");
       vizEl.setAttribute("src", TABLEAU_URL);
@@ -138,7 +141,7 @@ const TableauViz = () => {
       vizEl.setAttribute("toolbar", "bottom");
       vizEl.setAttribute("hide-tabs", "false");
 
-      containerRef.current.appendChild(vizEl);
+      container.appendChild(vizEl);
     };
 
     if (existingScript) {
@@ -155,12 +158,9 @@ const TableauViz = () => {
     }
 
     return () => {
-      if (containerRef.current) {
-        containerRef.current.innerHTML = "";
-      }
+      container.innerHTML = "";
     };
   }, []);
-
   return (
     <div
       ref={containerRef}

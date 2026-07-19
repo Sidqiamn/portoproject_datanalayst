@@ -121,7 +121,7 @@ const steps = [
 const Detail2 = () => {
   const navigate = useNavigate();
   const [activeStep, setActiveStep] = useState(null);
-  const [visible, setVisible] = useState(false);
+  const [, setVisible] = useState(false);
 
   useEffect(() => {
     const t = setTimeout(() => setVisible(true), 50);
