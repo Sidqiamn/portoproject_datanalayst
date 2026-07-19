@@ -14,6 +14,7 @@ import EcommerceAnalytics from "./pages/EcommercePy";
 import Powerbi2Hijab from "./pages/Powerbi2Hijab";
 import Salesdashboard1 from "./pages/Salesdashboard1";
 import Scrapbappenas from "./pages/Scrapbappenas";
+import PowerBI3Blink from "./pages/PowerBI3Blink";
 
 const App = () => {
   return (
@@ -32,6 +33,7 @@ const App = () => {
         <Route path="/lifeexpectancy" element={<Lifeexpetancy />} />
         <Route path="/powerBI1" element={<PowerBI1 />} />
         <Route path="/Powerbi2Hijab" element={<Powerbi2Hijab />} />
+        <Route path="/PowerBI3Blink" element={<PowerBI3Blink />} />
         <Route path="/excell1" element={<Excell1 />} />
         <Route path="/scrapbappenas" element={<Scrapbappenas />} />
         <Route path="/excel2" element={<Excell2 />} />

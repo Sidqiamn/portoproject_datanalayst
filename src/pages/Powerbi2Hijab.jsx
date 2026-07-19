@@ -16,7 +16,6 @@ import {
   SearchCheck,
   LayoutDashboard,
   CheckCircle2,
-  ArrowRight,
   ArrowLeft,
   ChevronDown,
   ZoomIn,
@@ -869,15 +868,6 @@ const Powerbi2Hijab = () => {
               </span>
               Kembali
             </button>
-            <a
-              href="https://powerbi.microsoft.com"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 bg-[#3B2440] hover:bg-[#2A1A32] text-white text-sm font-bold px-5 py-2.5 rounded-xl transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
-            >
-              Buka di Power BI
-              <ArrowRight size={14} />
-            </a>
           </div>
         </div>
       </div>

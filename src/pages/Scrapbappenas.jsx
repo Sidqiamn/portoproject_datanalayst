@@ -925,7 +925,7 @@ recommendation = resp.json()["choices"][0]["message"]["content"]`,
                   GitHub Repo
                 </a>
                 <a
-                  href="https://instagram.com/yourhandle"
+                  href="https://www.instagram.com/bappenasri/"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{

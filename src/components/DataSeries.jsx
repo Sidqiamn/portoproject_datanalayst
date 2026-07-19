@@ -14,6 +14,7 @@ import excell1 from "../assets/excell1.png";
 import excel2 from "../assets/exell2.png";
 import pytthonimage1 from "../assets/orderheatmap.png";
 import dashboardhijabPowerbi2 from "../assets/dashboardhijabPowerbi2.png";
+import powerbidashboard3blink from "../assets/powerbidashboard3blink.png";
 
 // ─── DATA ─────────────────────────────────────────────────────────────────────
 const TOOLS = [
@@ -150,6 +151,16 @@ const TOOLS = [
             tagColor: "bg-sky-500",
             image: dashboardhijabPowerbi2,
             url: "/Powerbi2Hijab",
+            isInternal: false,
+          },
+          {
+            id: 3,
+            title: "Blinkit Dashboard",
+            date: "Feb 2026",
+            tag: "E-Commerce",
+            tagColor: "bg-sky-500",
+            image: powerbidashboard3blink,
+            url: "/PowerBI3Blink",
             isInternal: false,
           },
         ],
