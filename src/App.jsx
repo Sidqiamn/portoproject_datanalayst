@@ -12,6 +12,8 @@ import PowerBI1 from "./pages/PowerBI1";
 import Excell1 from "./pages/Excell1";
 import Scrap_bappenas from "./pages/Scrap_bappenas";
 import Excell2 from "./pages/Excell2";
+import EcommerceAnalytics from "./pages/EcommercePy";
+import Powerbi2Hijab from "./pages/Powerbi2Hijab";
 
 const App = () => {
   return (
@@ -29,9 +31,11 @@ const App = () => {
         <Route path="/gdp" element={<Gdp />} />
         <Route path="/lifeexpectancy" element={<Lifeexpetancy />} />
         <Route path="/powerBI1" element={<PowerBI1 />} />
+        <Route path="/Powerbi2Hijab" element={<Powerbi2Hijab />} />
         <Route path="/excell1" element={<Excell1 />} />
         <Route path="/scrapbappenas" element={<Scrap_bappenas />} />
         <Route path="/excel2" element={<Excell2 />} />
+        <Route path="/EcommerceAnalytics" element={<EcommerceAnalytics />} />
       </Routes>
     </>
   );

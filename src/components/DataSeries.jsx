@@ -12,6 +12,8 @@ import lifeex from "../assets/lifeex.png";
 import powerBI1 from "../assets/powerBI1.png";
 import excell1 from "../assets/excell1.png";
 import excel2 from "../assets/exell2.png";
+import pytthonimage1 from "../assets/orderheatmap.png";
+import dashboard_hijab_Powerbi2 from "../assets/dashboard_hijab_Powerbi2.png";
 
 // ─── DATA ─────────────────────────────────────────────────────────────────────
 const TOOLS = [
@@ -142,12 +144,12 @@ const TOOLS = [
           },
           {
             id: 2,
-            title: "HR Workforce Analytics",
+            title: "Zen Hijab Dashboard",
             date: "Feb 2026",
-            tag: "HR",
+            tag: "E-Commerce",
             tagColor: "bg-sky-500",
-            image: imgMBG,
-            url: "#",
+            image: dashboard_hijab_Powerbi2,
+            url: "/Powerbi2Hijab",
             isInternal: false,
           },
         ],
@@ -245,20 +247,20 @@ const TOOLS = [
             date: "Jan 2026",
             tag: "Pivot",
             tagColor: "bg-red-600",
-            image: excell1,
-            url: "/excell1",
+            image: pytthonimage1,
+            url: "/EcommerceAnalytics",
             isInternal: true,
           },
-          {
-            id: 2,
-            title: "Dashboard Sales Analysis",
-            date: "Jan 2026",
-            tag: "Pivot, Power Query, VBA",
-            tagColor: "bg-green-600",
-            image: excel2,
-            url: "/excel2",
-            isInternal: true,
-          },
+          // {
+          //   id: 2,
+          //   title: "Dashboard Sales Analysis",
+          //   date: "Jan 2026",
+          //   tag: "Pivot, Power Query, VBA",
+          //   tagColor: "bg-green-600",
+          //   image: excel2,
+          //   url: "/excel2",
+          //   isInternal: true,
+          // },
         ],
       },
     ],
