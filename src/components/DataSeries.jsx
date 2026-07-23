@@ -196,7 +196,7 @@ const TOOLS = [
   },
   {
     id: "excel",
-    label: "Excel",
+    label: "Excel/Spreadsheet + Looker Studio",
     emoji: "📗",
     accentClass: "text-green-700",
     badgeClass: "bg-green-600",
@@ -237,7 +237,7 @@ const TOOLS = [
   },
   {
     id: "python",
-    label: "python",
+    label: "Python + Machine/Deep Learning  ",
     emoji: "📗",
     accentClass: "text-red-700",
     badgeClass: "bg-red-600",

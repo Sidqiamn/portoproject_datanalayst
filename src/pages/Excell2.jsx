@@ -313,25 +313,6 @@ const Detail2 = () => {
                     distribusi geografis, semuanya ditenagai Power Query, M
                     Code, dan VBA.
                   </p>
-
-                  <a
-                    href="https://youtu.be/a1OF_wgRK_U?si=V4uVvFZJ5na0YUDO"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-bold px-5 py-2.5 rounded-xl transition-all hover:-translate-y-0.5"
-                    style={{ background: "var(--accent)", color: "#fff" }}
-                  >
-                    ▶ Tonton Tutorial
-                    <svg
-                      className="w-3.5 h-3.5"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2.5"
-                    >
-                      <path d="M7 17L17 7M17 7H7M17 7v10" />
-                    </svg>
-                  </a>
                 </div>
 
                 {/* Right — KPI grid */}
@@ -1029,36 +1010,6 @@ const Detail2 = () => {
                 Kembali
               </span>
             </button>
-
-            <a
-              href="https://youtu.be/a1OF_wgRK_U?si=V4uVvFZJ5na0YUDO"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-bold px-5 py-2.5 rounded-xl transition-all hover:-translate-y-0.5 hover:shadow-lg"
-              style={{
-                background: "var(--accent)",
-                color: "#fff",
-                boxShadow: "0 0 0 rgba(79,142,247,0)",
-              }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.boxShadow =
-                  "0 8px 24px rgba(79,142,247,0.35)")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.boxShadow = "0 0 0 rgba(79,142,247,0)")
-              }
-            >
-              ▶ Tonton di YouTube
-              <svg
-                className="w-3.5 h-3.5"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-              >
-                <path d="M7 17L17 7M17 7H7M17 7v10" />
-              </svg>
-            </a>
           </div>
         </div>
       </div>
