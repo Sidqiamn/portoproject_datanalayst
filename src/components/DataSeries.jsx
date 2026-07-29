@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import imgMBG from "../assets/mbgkeracunan.png";
 import diabatesimg from "../assets/diabetes.png";
 import salesdashboard1 from "../assets/salesdashboard1.png";
-import hR from "../assets/hR.png";
+import hr2 from "../assets/hr2.png";
 import rankmiliter from "../assets/rankmiliter.png";
 import gdp from "../assets/gdp.png";
 import lifeex from "../assets/lifeex.png";
@@ -109,7 +109,7 @@ const TOOLS = [
             date: "Feb 2026",
             tag: "HR",
             tagColor: "bg-blue-500",
-            image: hR,
+            image: hr2,
             url: "/hRDashboard",
             isInternal: true,
           },
