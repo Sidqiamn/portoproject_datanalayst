@@ -15,6 +15,7 @@ import excel2 from "../assets/exell2.png";
 import pytthonimage1 from "../assets/orderheatmap.png";
 import dashboardhijabPowerbi2 from "../assets/dashboardhijabPowerbi2.png";
 import powerbidashboard3blink from "../assets/powerbidashboard3blink.png";
+import powerbi4supplydashboard from "../assets/powerbi4supplydashboard.png";
 
 // ─── DATA ─────────────────────────────────────────────────────────────────────
 const TOOLS = [
@@ -151,7 +152,7 @@ const TOOLS = [
             tagColor: "bg-sky-500",
             image: dashboardhijabPowerbi2,
             url: "/Powerbi2Hijab",
-            isInternal: false,
+            isInternal: true,
           },
           {
             id: 3,
@@ -161,7 +162,17 @@ const TOOLS = [
             tagColor: "bg-sky-500",
             image: powerbidashboard3blink,
             url: "/PowerBI3Blink",
-            isInternal: false,
+            isInternal: true,
+          },
+          {
+            id: 4,
+            title: "Supply Dashboard",
+            date: "Juli 2026",
+            tag: "Bahan Bangunan",
+            tagColor: "bg-sky-500",
+            image: powerbi4supplydashboard,
+            url: "/Powerbi4Dashboardqi",
+            isInternal: true,
           },
         ],
       },
