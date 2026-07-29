@@ -591,7 +591,7 @@ const Lifeexpetancy = () => {
                 <p className="text-sm text-slate-600 leading-relaxed">
                   🇮🇩 <strong className="text-red-600">Indonesia</strong>{" "}
                   mencatat harapan hidup sekitar{" "}
-                  <strong className="text-slate-700">68 tahun</strong> — berada
+                  <strong className="text-slate-700">71 tahun</strong> — berada
                   di bawah rata-rata ASEAN. Masih ada ruang besar untuk
                   peningkatan melalui penguatan layanan kesehatan primer dan
                   pengurangan kesenjangan antar daerah.
