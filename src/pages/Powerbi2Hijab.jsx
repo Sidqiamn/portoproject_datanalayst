@@ -18,20 +18,19 @@ import {
   CheckCircle2,
   ArrowLeft,
   ChevronDown,
-  ZoomIn,
+  Maximize2,
   X,
 } from "lucide-react";
 
-// Ganti path ini dengan screenshot dashboard Power BI asli Anda
-import dashboardZen from "../../src/assets/dashboardhijabPowerbi2.png";
+/* ─────────────────────────────────────────────────────────────
+   POWER BI EMBED URL (Publish to Web)
+───────────────────────────────────────────────────────────── */
+const POWER_BI_EMBED_URL =
+  "https://app.fabric.microsoft.com/view?r=eyJrIjoiN2U1ODE0MGYtMWMyMS00NzY5LTk3OGYtY2VjNmNiZmVhZjI2IiwidCI6IjdkZGFiOTE3LTUzN2YtNGI0Zi1hNjE5LTE4N2UxNjc3MzNiYSJ9";
 
 /* ─────────────────────────────────────────────────────────────
-   DATA — direkonstruksi dari screenshot dashboard "Zen Dress Daily"
-   Catatan: angka varian & SKU disusun ulang agar konsisten dengan
-   total KPI (Total Revenue Rp367,0Jt & Barang Terjual 2,60K).
-   Ganti dengan data asli dari file mentah bila tersedia.
+   DATA DASHBOARD
 ───────────────────────────────────────────────────────────── */
-
 const filters = {
   toko: "Semua Toko (7 cabang)",
   tanggal: "Selasa, 03 Februari 2026",
@@ -308,7 +307,7 @@ const SkuBars = ({ data, max, format, color = "#D46A82" }) => (
 );
 
 /* ─────────────────────────────────────────────────────────────
-   TAG-STYLE KPI CARD — signature element (hang-tag ala label baju)
+   TAG-STYLE KPI CARD
 ───────────────────────────────────────────────────────────── */
 
 const TagKPI = ({ card }) => {
@@ -316,7 +315,6 @@ const TagKPI = ({ card }) => {
   const up = card.trend >= 0;
   return (
     <div className="relative bg-white rounded-2xl border border-[#EADFCF] shadow-[0_6px_20px_-8px_rgba(59,36,64,0.18)] pt-6 pb-4 px-4 card-hover">
-      {/* lubang gantungan tag */}
       <span className="absolute -top-2.5 left-5 w-4 h-4 rounded-full bg-[#FAF6F1] border border-[#EADFCF]" />
       <svg
         className="absolute -top-[18px] left-[26px]"
@@ -386,7 +384,7 @@ const SectionTitle = ({ eyebrow, title, subtitle }) => (
 const Powerbi2Hijab = () => {
   const navigate = useNavigate();
   const [tab, setTab] = useState("dashboard");
-  const [zoomed, setZoomed] = useState(false);
+  const [isFullScreen, setIsFullScreen] = useState(false);
 
   const maxTop = Math.max(...topRevenue.map((d) => d.value));
   const maxBottom = Math.max(...bottomRevenue.map((d) => d.value));
@@ -401,7 +399,7 @@ const Powerbi2Hijab = () => {
         @keyframes riseIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes growBar { from { width: 0%; } }
         @keyframes growUp { from { height: 0px !important; } }
-        @keyframes zoomPop { from { opacity: 0; transform: scale(0.94); } to { opacity: 1; transform: scale(1); } }
+        @keyframes zoomPop { from { opacity: 0; transform: scale(0.96); } to { opacity: 1; transform: scale(1); } }
 
         .rise { animation: riseIn 0.55s cubic-bezier(.22,.68,0,1.2) both; }
         .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
@@ -417,28 +415,34 @@ const Powerbi2Hijab = () => {
         .filter-pill { background: white; border: 1px solid #EADFCF; }
       `}</style>
 
-      {zoomed && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-[#241B2F]/80 backdrop-blur-sm p-4"
-          onClick={() => setZoomed(false)}
-        >
+      {/* FULLSCREEN MODAL FOR POWER BI */}
+      {isFullScreen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#241B2F]/90 backdrop-blur-sm p-2 sm:p-6">
           <div
-            className="relative max-w-6xl w-full"
+            className="relative w-full h-full max-w-7xl bg-white rounded-2xl overflow-hidden shadow-2xl flex flex-col"
             style={{
               animation: "zoomPop 0.25s cubic-bezier(.22,.68,0,1.2) both",
             }}
           >
-            <img
-              src={dashboardZen}
-              alt="Dashboard Zen Dress Daily — tampilan penuh"
-              className="w-full rounded-2xl shadow-2xl"
-            />
-            <button
-              onClick={() => setZoomed(false)}
-              className="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/90 hover:bg-white flex items-center justify-center shadow-lg"
-            >
-              <X size={16} className="text-[#3B2440]" />
-            </button>
+            <div className="flex items-center justify-between px-6 py-3 bg-[#3B2440] text-white">
+              <span className="text-sm font-bold flex items-center gap-2">
+                🧵 Power BI Live Interactive View
+              </span>
+              <button
+                onClick={() => setIsFullScreen(false)}
+                className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+              >
+                <X size={18} className="text-white" />
+              </button>
+            </div>
+            <div className="flex-1 w-full h-full bg-slate-100">
+              <iframe
+                title="Power BI Interactive Fullscreen"
+                className="w-full h-full border-0"
+                src={POWER_BI_EMBED_URL}
+                allowFullScreen={true}
+              />
+            </div>
           </div>
         </div>
       )}
@@ -451,7 +455,7 @@ const Powerbi2Hijab = () => {
         }}
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
-          {/* BACK */}
+          {/* BACK BUTTON */}
           <button
             onClick={() => navigate(-1)}
             className="rise inline-flex items-center gap-2 text-sm font-semibold text-[#8A7A82] hover:text-[#D46A82] transition-colors group"
@@ -506,7 +510,7 @@ const Powerbi2Hijab = () => {
                 yang bisa difilter per toko dan per tanggal pemesanan.
               </p>
 
-              {/* FILTER EXPLAINER — fitur toko & tanggal */}
+              {/* FILTERS */}
               <div className="flex flex-wrap gap-3 mt-6">
                 <div className="filter-pill rounded-xl px-4 py-2.5 flex items-center gap-2.5">
                   <Store size={15} className="text-[#D46A82]" />
@@ -533,13 +537,6 @@ const Powerbi2Hijab = () => {
                   </div>
                 </div>
               </div>
-              <p className="text-white/60 text-[11px] mt-3 max-w-xl leading-relaxed">
-                Kedua slicer ini menggerakkan seluruh kartu & chart di halaman
-                ini secara bersamaan — cukup pilih satu cabang toko dan/atau
-                satu tanggal untuk melihat performa hari itu saja, atau biarkan
-                "Semua Toko" aktif untuk melihat gambaran gabungan seluruh
-                cabang.
-              </p>
             </div>
           </div>
 
@@ -550,13 +547,17 @@ const Powerbi2Hijab = () => {
           >
             <button
               onClick={() => setTab("dashboard")}
-              className={`px-5 py-2 rounded-xl text-sm font-bold transition-all duration-200 ${tab === "dashboard" ? "tab-on" : "tab-off"}`}
+              className={`px-5 py-2 rounded-xl text-sm font-bold transition-all duration-200 ${
+                tab === "dashboard" ? "tab-on" : "tab-off"
+              }`}
             >
-              Dashboard
+              Dashboard Interaktif
             </button>
             <button
               onClick={() => setTab("proses")}
-              className={`px-5 py-2 rounded-xl text-sm font-bold transition-all duration-200 ${tab === "proses" ? "tab-on" : "tab-off"}`}
+              className={`px-5 py-2 rounded-xl text-sm font-bold transition-all duration-200 ${
+                tab === "proses" ? "tab-on" : "tab-off"
+              }`}
             >
               Proses & Insight
             </button>
@@ -564,11 +565,47 @@ const Powerbi2Hijab = () => {
 
           {/* ══════════ TAB: DASHBOARD ══════════ */}
           {tab === "dashboard" && (
-            <div className="space-y-5">
-              {/* KPI */}
+            <div className="space-y-6">
+              {/* LIVE POWER BI EMBED SECTION */}
+              <div
+                className="rise bg-white rounded-2xl border border-[#EADFCF] shadow-sm overflow-hidden"
+                style={{ animationDelay: "0.1s" }}
+              >
+                <div className="flex items-center justify-between px-6 py-4 border-b border-[#EADFCF] bg-[#FBEFF1]">
+                  <div>
+                    <span className="text-[13px] font-bold text-[#3B2440] flex items-center gap-2">
+                      <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
+                      Laporan Power BI Langsung (Live Embed)
+                    </span>
+                    <p className="text-[11px] text-[#8A7A82] mt-0.5">
+                      Gunakan filter dan klik chart langsung di bawah ini untuk
+                      eksplorasi data.
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => setIsFullScreen(true)}
+                    className="flex items-center gap-1.5 text-[11px] font-semibold text-[#D46A82] bg-white border border-[#EADFCF] px-3 py-1.5 rounded-full hover:border-[#D46A82] transition-colors shadow-sm"
+                  >
+                    <Maximize2 size={13} />
+                    Layar Penuh
+                  </button>
+                </div>
+
+                {/* CONTAINER IFRAME EMBED */}
+                <div className="relative w-full aspect-[16/9] min-h-[500px] bg-slate-50">
+                  <iframe
+                    title="Dashboard Zen Dress Daily Power BI"
+                    className="w-full h-full border-0"
+                    src={POWER_BI_EMBED_URL}
+                    allowFullScreen={true}
+                  />
+                </div>
+              </div>
+
+              {/* KPI STATS SUMMARY */}
               <div
                 className="rise grid grid-cols-2 lg:grid-cols-4 gap-4 pt-2"
-                style={{ animationDelay: "0.1s" }}
+                style={{ animationDelay: "0.14s" }}
               >
                 {kpiCards.map((c, i) => (
                   <TagKPI key={i} card={c} />
@@ -578,7 +615,7 @@ const Powerbi2Hijab = () => {
               {/* TOP / BOTTOM PRODUK */}
               <div
                 className="rise grid grid-cols-1 md:grid-cols-2 gap-4"
-                style={{ animationDelay: "0.14s" }}
+                style={{ animationDelay: "0.18s" }}
               >
                 <div className="bg-white rounded-2xl border border-[#EADFCF] shadow-sm p-5 card-hover">
                   <SectionTitle
@@ -613,7 +650,7 @@ const Powerbi2Hijab = () => {
               {/* VARIAN DONUTS */}
               <div
                 className="rise grid grid-cols-1 md:grid-cols-2 gap-4"
-                style={{ animationDelay: "0.18s" }}
+                style={{ animationDelay: "0.22s" }}
               >
                 <div className="bg-white rounded-2xl border border-[#EADFCF] shadow-sm p-5 card-hover">
                   <SectionTitle
@@ -682,7 +719,7 @@ const Powerbi2Hijab = () => {
               {/* SKU BARS */}
               <div
                 className="rise grid grid-cols-1 md:grid-cols-2 gap-4"
-                style={{ animationDelay: "0.22s" }}
+                style={{ animationDelay: "0.26s" }}
               >
                 <div className="bg-white rounded-2xl border border-[#EADFCF] shadow-sm p-5 card-hover">
                   <SectionTitle
@@ -702,38 +739,6 @@ const Powerbi2Hijab = () => {
                     data={skuRevenue}
                     max={maxSkuRev}
                     format={(v) => `Rp${v.toFixed(1)}Jt`}
-                  />
-                </div>
-              </div>
-
-              {/* SCREENSHOT ASLI */}
-              <div
-                className="rise bg-white rounded-2xl border border-[#EADFCF] shadow-sm overflow-hidden"
-                style={{ animationDelay: "0.26s" }}
-              >
-                <div className="flex items-center justify-between px-6 py-4 border-b border-[#EADFCF] bg-[#FBEFF1]">
-                  <div>
-                    <span className="text-[12px] font-bold text-[#3B2440]">
-                      Preview Dashboard Power BI
-                    </span>
-                    <p className="text-[10px] text-[#8A7A82]">
-                      Tampilan asli hasil visualisasi harian
-                    </p>
-                  </div>
-                  <button
-                    onClick={() => setZoomed(true)}
-                    className="flex items-center gap-1.5 text-[11px] font-semibold text-[#D46A82] bg-white border border-[#EADFCF] px-2.5 py-1 rounded-full hover:border-[#D46A82] transition-colors"
-                  >
-                    <ZoomIn size={12} />
-                    Perbesar
-                  </button>
-                </div>
-                <div className="p-4 bg-gradient-to-b from-[#FBEFF1] to-white">
-                  <img
-                    src={dashboardZen}
-                    alt="Dashboard Zen Dress Daily"
-                    className="w-full rounded-xl border border-[#EADFCF] shadow-md cursor-zoom-in hover:shadow-lg transition-shadow"
-                    onClick={() => setZoomed(true)}
                   />
                 </div>
               </div>

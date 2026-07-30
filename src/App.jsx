@@ -16,6 +16,7 @@ import Salesdashboard1 from "./pages/Salesdashboard1";
 import Scrapbappenas from "./pages/Scrapbappenas";
 import PowerBI3Blink from "./pages/PowerBI3Blink";
 import Powerbi4Dashboardqi from "./pages/Powerbi4Dashboardqi";
+import ForecastPythonBahanBangunan from "./pages/ForecastPythonBahanBangunan";
 
 const App = () => {
   return (
@@ -40,6 +41,10 @@ const App = () => {
         <Route path="/scrapbappenas" element={<Scrapbappenas />} />
         <Route path="/excel2" element={<Excell2 />} />
         <Route path="/EcommerceAnalytics" element={<EcommerceAnalytics />} />
+        <Route
+          path="/ForecastPythonBahanBangunan"
+          element={<ForecastPythonBahanBangunan />}
+        />
       </Routes>
     </>
   );

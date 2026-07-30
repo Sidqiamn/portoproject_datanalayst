@@ -17,14 +17,12 @@ import {
   CheckCircle2,
   ArrowLeft,
   ChevronDown,
-  ZoomIn,
-  X,
   AlertTriangle,
 } from "lucide-react";
 
-// Ganti path ini dengan screenshot dashboard Power BI asli Anda
-// (letakkan file di src/assets/, misalnya hasil export dari try_project2.pbix)
-import powerbidashboard3blink from "../../src/assets/powerbidashboard3blink.png";
+// Link Embed Power BI
+const powerbidashboard3blink =
+  "https://app.fabric.microsoft.com/view?r=eyJrIjoiMjJhOTY5MjAtYWFmOS00NmVmLWIwZGQtYTQ3Yjg4ZWFhZmM0IiwidCI6IjdkZGFiOTE3LTUzN2YtNGI0Zi1hNjE5LTE4N2UxNjc3MzNiYSJ9";
 
 /* ─────────────────────────────────────────────────────────────
    DATA — diambil & dibaca ulang langsung dari screenshot dashboard
@@ -86,11 +84,12 @@ const itemTypeRevenue = [
 
 // Line chart: sales berdasarkan Outlet Establishment Year (rekonstruksi visual)
 const establishmentYearSales = [
+  { year: 2011, value: 78 },
   { year: 2012, value: 130 },
-  { year: 2013, value: 78 },
-  { year: 2014, value: 131 },
+  { year: 2014, value: 132 },
+  { year: 2015, value: 131 },
   { year: 2016, value: 132 },
-  { year: 2017, value: 132 },
+  { year: 2017, value: 133 },
   { year: 2018, value: 205 },
   { year: 2020, value: 129 },
   { year: 2022, value: 131 },
@@ -533,7 +532,6 @@ const SectionTitle = ({ eyebrow, title, subtitle }) => (
 const PowerBI3Blink = () => {
   const navigate = useNavigate();
   const [tab, setTab] = useState("dashboard");
-  const [zoomed, setZoomed] = useState(false);
 
   const maxItemType = Math.max(...itemTypeRevenue.map((d) => d.value));
   const totalRevenueAllOutlets = outletPivot.reduce((s, d) => s + d.revenue, 0);
@@ -560,32 +558,6 @@ const PowerBI3Blink = () => {
         .tab-off:hover { border-color: #3C8B3F; color: #3C8B3F; }
         .filter-pill { background: white; border: 1px solid #E7E1CC; }
       `}</style>
-
-      {zoomed && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-[#0C1510]/85 backdrop-blur-sm p-4"
-          onClick={() => setZoomed(false)}
-        >
-          <div
-            className="relative max-w-6xl w-full"
-            style={{
-              animation: "zoomPop 0.25s cubic-bezier(.22,.68,0,1.2) both",
-            }}
-          >
-            <img
-              src={powerbidashboard3blink}
-              alt="Dashboard BlinkIt Indo Sales — tampilan penuh"
-              className="w-full rounded-2xl shadow-2xl"
-            />
-            <button
-              onClick={() => setZoomed(false)}
-              className="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/90 hover:bg-white flex items-center justify-center shadow-lg"
-            >
-              <X size={16} className="text-[#14251C]" />
-            </button>
-          </div>
-        </div>
-      )}
 
       <div
         className="min-h-screen grain-bg"
@@ -914,7 +886,7 @@ const PowerBI3Blink = () => {
                 </p>
               </div>
 
-              {/* SCREENSHOT ASLI */}
+              {/* EMBED POWER BI IFRAME */}
               <div
                 className="rise bg-white rounded-2xl border border-[#E7E1CC] shadow-sm overflow-hidden"
                 style={{ animationDelay: "0.28s" }}
@@ -925,24 +897,19 @@ const PowerBI3Blink = () => {
                       Preview Dashboard Power BI
                     </span>
                     <p className="text-[10px] text-[#8A8F80]">
-                      Tampilan asli hasil visualisasi (try_project2.pbix)
+                      Tampilan interaktif hasil visualisasi (try_project2.pbix)
                     </p>
                   </div>
-                  <button
-                    onClick={() => setZoomed(true)}
-                    className="flex items-center gap-1.5 text-[11px] font-semibold text-[#3C8B3F] bg-white border border-[#E7E1CC] px-2.5 py-1 rounded-full hover:border-[#3C8B3F] transition-colors"
-                  >
-                    <ZoomIn size={12} />
-                    Perbesar
-                  </button>
                 </div>
                 <div className="p-4 bg-gradient-to-b from-[#EAF4E5] to-white">
-                  <img
-                    src={powerbidashboard3blink}
-                    alt="Dashboard BlinkIt Indo Sales"
-                    className="w-full rounded-xl border border-[#E7E1CC] shadow-md cursor-zoom-in hover:shadow-lg transition-shadow"
-                    onClick={() => setZoomed(true)}
-                  />
+                  <div className="relative w-full overflow-hidden rounded-xl border border-[#E7E1CC] shadow-md pt-[56.25%]">
+                    <iframe
+                      title="Dashboard BlinkIt Indo Sales"
+                      src={powerbidashboard3blink}
+                      className="absolute top-0 left-0 w-full h-full border-0"
+                      allowFullScreen={true}
+                    ></iframe>
+                  </div>
                 </div>
               </div>
             </div>
